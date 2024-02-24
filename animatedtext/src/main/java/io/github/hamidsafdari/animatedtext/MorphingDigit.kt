@@ -1,10 +1,12 @@
-package com.hs.mrphcntr
+package io.github.hamidsafdari.animatedtext
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Color
@@ -17,7 +19,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MorphingDigit(
-    digit: AnimatedDigit,
+    digit: Digit,
     modifier: Modifier = Modifier,
     durationMillis: Long = 500,
     color: Color = Color.Black,
@@ -46,7 +48,11 @@ fun MorphingDigit(
 @Preview
 @Composable
 fun MorphingDigitPreview() {
-    Row {
-        MorphingDigit(digit = AnimatedDigit.ZERO)
+    Row(
+        modifier = Modifier,
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {
+        MorphingDigit(digit = Digit.ZERO)
     }
 }

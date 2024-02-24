@@ -1,4 +1,4 @@
-package com.hs.mrphcntr
+package io.github.hamidsafdari.animatedtext
 
 import androidx.compose.ui.graphics.vector.PathParser
 import org.junit.Test

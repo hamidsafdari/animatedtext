@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Morphing Counter"
-include(":mrphcntr")
+rootProject.name = "Animated Text"
+include(":animatedtext")

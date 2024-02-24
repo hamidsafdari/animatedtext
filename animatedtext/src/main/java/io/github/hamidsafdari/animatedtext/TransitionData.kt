@@ -1,4 +1,4 @@
-package com.hs.mrphcntr
+package io.github.hamidsafdari.animatedtext
 
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.tween
@@ -51,7 +51,7 @@ class TransitionData(points: List<State<Float>>) {
 }
 
 @Composable
-fun updateTransitionData(digit: AnimatedDigit, durationMillis: Int = 500): TransitionData {
+fun updateTransitionData(digit: Digit, durationMillis: Int = 500): TransitionData {
     val transition = updateTransition(digit, label = "animated digit points")
 
     val points = mutableListOf<State<Float>>()
@@ -61,16 +61,16 @@ fun updateTransitionData(digit: AnimatedDigit, durationMillis: Int = 500): Trans
             transitionSpec = { tween(durationMillis) }
         ) { state ->
             when (state) {
-                AnimatedDigit.ONE -> points1[i]
-                AnimatedDigit.TWO -> points2[i]
-                AnimatedDigit.THREE -> points3[i]
-                AnimatedDigit.FOUR -> points4[i]
-                AnimatedDigit.FIVE -> points5[i]
-                AnimatedDigit.SIX -> points6[i]
-                AnimatedDigit.SEVEN -> points7[i]
-                AnimatedDigit.EIGHT -> points8[i]
-                AnimatedDigit.NINE -> points9[i]
-                AnimatedDigit.ZERO -> points0[i]
+                Digit.ONE -> points1[i]
+                Digit.TWO -> points2[i]
+                Digit.THREE -> points3[i]
+                Digit.FOUR -> points4[i]
+                Digit.FIVE -> points5[i]
+                Digit.SIX -> points6[i]
+                Digit.SEVEN -> points7[i]
+                Digit.EIGHT -> points8[i]
+                Digit.NINE -> points9[i]
+                Digit.ZERO -> points0[i]
             }
         })
     }

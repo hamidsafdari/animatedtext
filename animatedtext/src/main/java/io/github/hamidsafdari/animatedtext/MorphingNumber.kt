@@ -1,4 +1,4 @@
-package com.hs.mrphcntr
+package io.github.hamidsafdari.animatedtext
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.height
@@ -22,7 +22,7 @@ import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MorphingCounter(
+fun MorphingNumber(
     number: Long,
     durationMillis: Long = 500,
     color: Color = Color.Black,
@@ -30,16 +30,16 @@ fun MorphingCounter(
 ) {
     val digits = number.toString(10).map { c ->
         when (c) {
-            '1' -> AnimatedDigit.ONE
-            '2' -> AnimatedDigit.TWO
-            '3' -> AnimatedDigit.THREE
-            '4' -> AnimatedDigit.FOUR
-            '5' -> AnimatedDigit.FIVE
-            '6' -> AnimatedDigit.SIX
-            '7' -> AnimatedDigit.SEVEN
-            '8' -> AnimatedDigit.EIGHT
-            '9' -> AnimatedDigit.NINE
-            else -> AnimatedDigit.ZERO
+            '1' -> Digit.ONE
+            '2' -> Digit.TWO
+            '3' -> Digit.THREE
+            '4' -> Digit.FOUR
+            '5' -> Digit.FIVE
+            '6' -> Digit.SIX
+            '7' -> Digit.SEVEN
+            '8' -> Digit.EIGHT
+            '9' -> Digit.NINE
+            else -> Digit.ZERO
         }
     }
 
@@ -58,7 +58,7 @@ fun MorphingCounter(
 
 @Preview
 @Composable
-fun MorphingCounterPreview() {
+fun MorphingNumberPreview() {
     var count by remember { mutableLongStateOf(1000) }
     LaunchedEffect(true) {
         for (i in 0 until 10) {
@@ -70,8 +70,9 @@ fun MorphingCounterPreview() {
     Surface(
         modifier = Modifier
             .width(300.dp)
-            .height(110.dp)
+            .height(110.dp),
+        onClick = { count += 1 }
     ) {
-        MorphingCounter(number = count)
+        MorphingNumber(number = count)
     }
 }

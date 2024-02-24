@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.hs.mrphcntr"
+    namespace = "io.github.hamidsafdari"
     compileSdk = 34
 
     defaultConfig {

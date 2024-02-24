@@ -6,8 +6,34 @@ An Android library that uses morphing animations for number transitions.
 
 ## Usage
 
-1. [Usage step 1]
-2. [Usage step 2]
+1. Add the dependency to your project
+    ```kotlin
+    // add this in your root build.gradle file at the end of repositories
+    dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url("https://jitpack.io") }
+		}
+	}
+
+   dependencies {
+      implementation("com.github.hamidsafdari:animatedtext:0.1")
+   }
+    ```
+2. Use it in any composable
+    ```kotlin
+    var count by remember { mutableLongStateOf(1000) }
+
+    Surface(
+        modifier = Modifier
+            .width(300.dp)
+            .height(110.dp),
+        onClick = { count += 1 }
+    ) {
+        MorphingNumber(number = count)
+    }
+    ```
 
 ## Contributing
 

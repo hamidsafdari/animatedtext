@@ -1,8 +1,8 @@
-# Morphing Counter
+# Morphing Number
 
 ![Morphing Counter Preview GIF](/assets/morph.gif)
 
-An Android library that uses morphing animations for number transitions.
+An Android library for animating texts.
 
 ## Usage
 
